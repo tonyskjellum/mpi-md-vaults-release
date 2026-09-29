@@ -1,0 +1,19 @@
+[
+  {"old": "MPI_ADDRESS",          "new": "MPI_GET_ADDRESS",           "source": "MPI-2.0 deprecated names and functions"},
+  {"old": "MPI_TYPE_HINDEXED",    "new": "MPI_TYPE_CREATE_HINDEXED",  "source": "MPI-2.0 deprecated names and functions"},
+  {"old": "MPI_TYPE_HVECTOR",     "new": "MPI_TYPE_CREATE_HVECTOR",   "source": "MPI-2.0 deprecated names and functions"},
+  {"old": "MPI_TYPE_STRUCT",      "new": "MPI_TYPE_CREATE_STRUCT",    "source": "MPI-2.0 deprecated names and functions"},
+  {"old": "MPI_TYPE_EXTENT",      "new": "MPI_TYPE_GET_EXTENT",       "source": "MPI-2.0 deprecated names and functions"},
+  {"old": "MPI_TYPE_LB",          "new": "MPI_TYPE_GET_EXTENT",       "source": "MPI-2.0 deprecated names and functions"},
+  {"old": "MPI_TYPE_UB",          "new": "MPI_TYPE_GET_EXTENT",       "source": "MPI-2.0 deprecated names and functions"},
+  {"old": "MPI_ERRHANDLER_CREATE","new": "MPI_COMM_CREATE_ERRHANDLER","source": "MPI-2.0 deprecated names and functions"},
+  {"old": "MPI_ERRHANDLER_GET",   "new": "MPI_COMM_GET_ERRHANDLER",   "source": "MPI-2.0 deprecated names and functions"},
+  {"old": "MPI_ERRHANDLER_SET",   "new": "MPI_COMM_SET_ERRHANDLER",   "source": "MPI-2.0 deprecated names and functions"},
+  {"old": "MPI_KEYVAL_CREATE",    "new": "MPI_COMM_CREATE_KEYVAL",    "source": "MPI-2.0 deprecated names and functions"},
+  {"old": "MPI_KEYVAL_FREE",      "new": "MPI_COMM_FREE_KEYVAL",      "source": "MPI-2.0 deprecated names and functions"},
+  {"old": "MPI_ATTR_DELETE",      "new": "MPI_COMM_DELETE_ATTR",      "source": "MPI-2.0 deprecated names and functions"},
+  {"old": "MPI_ATTR_GET",         "new": "MPI_COMM_GET_ATTR",         "source": "MPI-2.0 deprecated names and functions"},
+  {"old": "MPI_ATTR_PUT",         "new": "MPI_COMM_SET_ATTR",         "source": "MPI-2.0 deprecated names and functions"},
+  {"old": "MPI_INFO_GET",         "new": "MPI_INFO_GET_STRING",       "source": "MPI-4.0 deprecated chapter"},
+  {"old": "MPI_INFO_GET_VALUELEN","new": "MPI_INFO_GET_STRING",       "source": "MPI-4.0 deprecated chapter"}
+]

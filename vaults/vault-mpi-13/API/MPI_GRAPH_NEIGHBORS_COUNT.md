@@ -1,0 +1,31 @@
+---
+title: MPI_GRAPH_NEIGHBORS_COUNT
+c_name: MPI_Graph_neighbors_count
+lis_name: MPI_GRAPH_NEIGHBORS_COUNT
+chapter: topol
+aliases: [MPI_GRAPH_NEIGHBORS_COUNT, MPI_Graph_neighbors_count]
+tags: [mpi/function, mpi/topol]
+---
+
+# MPI_GRAPH_NEIGHBORS_COUNT
+
+**C**
+```c
+int MPI_Graph_neighbors_count(MPI_Comm comm, int rank, int *nneighbors)
+```
+
+| Parameter | Intent | Description |
+|---|---|---|
+| `comm` | IN | communicator with graph topology (handle) |
+| `rank` | IN | rank of process in group of `comm` (integer) |
+| `nneighbors` | OUT | number of neighbors of specified process (integer) |
+
+**Fortran (mpif.h)**
+```fortran
+MPI_GRAPH_NEIGHBORS_COUNT(COMM, RANK, NNEIGHBORS, IERROR)
+  INTEGER COMM, RANK, NNEIGHBORS, IERROR
+```
+
+
+> [!info] Semantics
+> See the chapter note [[topol]] for the normative text.

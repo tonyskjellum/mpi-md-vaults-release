@@ -1,0 +1,50 @@
+---
+title: MPI_ISCATTER
+c_name: MPI_Iscatter
+lis_name: MPI_ISCATTER
+chapter: coll
+aliases: [MPI_ISCATTER, MPI_Iscatter]
+tags: [mpi/function, mpi/coll]
+---
+
+# MPI_ISCATTER
+
+**C**
+```c
+int MPI_Iscatter(const void* sendbuf, int sendcount, MPI_Datatype sendtype, void* recvbuf, int recvcount, MPI_Datatype recvtype, int root, MPI_Comm comm, MPI_Request *request)
+```
+
+| Parameter | Intent | Description |
+|---|---|---|
+| `sendbuf` | IN | address of send buffer (choice, significant only at root) |
+| `sendcount` | IN | number of elements sent to each process (non-negative integer, significant only at root) |
+| `sendtype` | IN | data type of send buffer elements (significant only at root) (handle) |
+| `recvbuf` | OUT | address of receive buffer (choice) |
+| `recvcount` | IN | number of elements in receive buffer (non-negative integer) |
+| `recvtype` | IN | data type of receive buffer elements (handle) |
+| `root` | IN | rank of sending process (integer) |
+| `comm` | IN | communicator (handle) |
+| `request` | OUT | communication request (handle) |
+
+**Fortran 2008**
+```fortran
+MPI_Iscatter(sendbuf, sendcount, sendtype, recvbuf, recvcount, recvtype, root, comm, request, ierror) BIND(C)
+  TYPE(*), DIMENSION(..), INTENT(IN), ASYNCHRONOUS :: sendbuf
+  TYPE(*), DIMENSION(..), ASYNCHRONOUS :: recvbuf
+  INTEGER, INTENT(IN) :: sendcount, recvcount, root
+  TYPE(MPI_Datatype), INTENT(IN) :: sendtype, recvtype
+  TYPE(MPI_Comm), INTENT(IN) :: comm
+  TYPE(MPI_Request), INTENT(OUT) :: request
+  INTEGER, OPTIONAL, INTENT(OUT) :: ierror
+```
+
+**Fortran (mpif.h)**
+```fortran
+MPI_ISCATTER(SENDBUF, SENDCOUNT, SENDTYPE, RECVBUF, RECVCOUNT, RECVTYPE, ROOT, COMM, REQUEST, IERROR)
+  <type> SENDBUF(*), RECVBUF(*)
+  INTEGER SENDCOUNT, SENDTYPE, RECVCOUNT, RECVTYPE, ROOT, COMM, REQUEST, IERROR
+```
+
+
+> [!info] Semantics
+> See the chapter note [[coll]] for the normative text.

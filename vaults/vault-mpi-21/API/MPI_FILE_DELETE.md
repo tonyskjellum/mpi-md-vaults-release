@@ -1,0 +1,36 @@
+---
+title: MPI_FILE_DELETE
+c_name: MPI_File_delete
+lis_name: MPI_FILE_DELETE
+chapter: io
+aliases: [MPI_FILE_DELETE, MPI_File_delete]
+tags: [mpi/function, mpi/io]
+---
+
+# MPI_FILE_DELETE
+
+**C**
+```c
+int MPI_File_delete(char *filename, MPI_Info info)
+```
+
+**C++**
+```cpp
+static void MPI::File::Delete(const char* filename, const MPI::Info& info)
+```
+
+| Parameter | Intent | Description |
+|---|---|---|
+| `filename` | IN | name of file to delete (string) |
+| `info` | IN | info object (handle) |
+
+**Fortran (mpif.h)**
+```fortran
+MPI_FILE_DELETE(FILENAME, INFO, IERROR)
+  CHARACTER*(*) FILENAME
+  INTEGER INFO, IERROR
+```
+
+
+> [!info] Semantics
+> See the chapter note [[io]] for the normative text.

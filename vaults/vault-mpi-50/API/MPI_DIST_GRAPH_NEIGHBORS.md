@@ -1,0 +1,45 @@
+---
+title: MPI_DIST_GRAPH_NEIGHBORS
+c_name: MPI_Dist_graph_neighbors
+lis_name: MPI_DIST_GRAPH_NEIGHBORS
+chapter: topol
+aliases: [MPI_DIST_GRAPH_NEIGHBORS, MPI_Dist_graph_neighbors]
+tags: [mpi/function, mpi/topol]
+---
+
+# MPI_DIST_GRAPH_NEIGHBORS
+
+**C**
+```c
+int MPI_Dist_graph_neighbors(MPI_Comm comm, int maxindegree, int sources[], int sourceweights[], int maxoutdegree, int destinations[], int destweights[])
+```
+
+| Parameter | Intent | Description |
+|---|---|---|
+| `comm` | IN | communicator with associated distributed graph topology (handle) |
+| `maxindegree` | IN | size of sources and sourceweights arrays (nonnegative integer) |
+| `sources` | OUT | ranks of MPI processes for which the calling MPI process is a destination (array of nonnegative integers) |
+| `sourceweights` | OUT | weights of the edges into the calling MPI process (array of nonnegative integers) |
+| `maxoutdegree` | IN | size of destinations and destweights arrays (nonnegative integer) |
+| `destinations` | OUT | ranks of MPI processes for which the calling MPI process is a source (array of nonnegative integers) |
+| `destweights` | OUT | weights of the edges out of the calling MPI process (array of nonnegative integers) |
+
+**Fortran 2008**
+```fortran
+MPI_Dist_graph_neighbors(comm, maxindegree, sources, sourceweights, maxoutdegree, destinations, destweights, ierror)
+  TYPE(MPI_Comm), INTENT(IN) :: comm
+  INTEGER, INTENT(IN) :: maxindegree, maxoutdegree
+  INTEGER, INTENT(OUT) :: sources(maxindegree), destinations(maxoutdegree)
+  INTEGER :: sourceweights(*), destweights(*)
+  INTEGER, OPTIONAL, INTENT(OUT) :: ierror
+```
+
+**Fortran (mpif.h)**
+```fortran
+MPI_DIST_GRAPH_NEIGHBORS(COMM, MAXINDEGREE, SOURCES, SOURCEWEIGHTS, MAXOUTDEGREE, DESTINATIONS, DESTWEIGHTS, IERROR)
+  INTEGER COMM, MAXINDEGREE, SOURCES(*), SOURCEWEIGHTS(*), MAXOUTDEGREE, DESTINATIONS(*), DESTWEIGHTS(*), IERROR
+```
+
+
+> [!info] Semantics
+> See the chapter note [[topol]] for the normative text.
