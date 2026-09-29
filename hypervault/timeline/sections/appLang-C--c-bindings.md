@@ -1,0 +1,35 @@
+---
+title: "C++ Bindings"
+chapter: appLang-C++
+present_in: ["MPI-2.1"]
+tags: [mpi/section, mpi/appLang-C++]
+---
+
+# C++ Bindings
+
+Chapter **appLang-C++** · in [[versions/v21/sections/appLang-C++#C++ Bindings|MPI-2.1]]
+
+## Changes along the time axis
+
+### MPI-1.3 → MPI-2.1
+
+_Section appears in MPI-2.1._
+
+### MPI-2.0 → MPI-2.1
+
+_Section appears in MPI-2.1._
+
+### MPI-2.1 → MPI-2.2  (1 changed paragraph)
+
+==namespace MPI {==
+
+==    };==
+
+### MPI-2.2 → MPI-3.0
+
+_Section absent from MPI-3.0._
+
+## Text by release
+
+> [!abstract]- MPI-2.1
+> ![[versions/v21/sections/appLang-C++#C++ Bindings]]

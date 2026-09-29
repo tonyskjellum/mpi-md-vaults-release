@@ -1,0 +1,52 @@
+{
+  "generated": "2026-09-29T01:43:49+00:00",
+  "generator": {
+    "script": "mpihyper.py",
+    "mpi2md_commit": "3e361b00ceb58f72039f015692dad138c5f839c0",
+    "mpi2md_dirty": false
+  },
+  "vaults_repo": {
+    "commit": "91b23220fec880d40b81a0699c0bcbe14dc4b71a",
+    "dirty": false
+  },
+  "inputs": {
+    "13": {
+      "dir": "vault-mpi-13",
+      "sha256": "028ccf2cf6dbb042cfa089658efa8b135a8788b9288a6fcc5dd963a7e1c76b72"
+    },
+    "20": {
+      "dir": "vault-mpi-20",
+      "sha256": "69c4ae4a263002f1fddd229eef897be62a2ee10557d2cdb0e591e3b430d1db78"
+    },
+    "21": {
+      "dir": "vault-mpi-21",
+      "sha256": "233c4de38cc404d4d9e841e34e8473bcf2b3c9612ed33d2b5a06ac627201f446"
+    },
+    "22": {
+      "dir": "vault-mpi-22",
+      "sha256": "2321bd5e5a75b9be24a149709b176e3c2b0430629a0f2583122390dcf4e831cf"
+    },
+    "30": {
+      "dir": "vault-mpi-30",
+      "sha256": "abb66a6bcae2c7abdd3fb536edbd778abf122524ab948f110091ff03fd18181c"
+    },
+    "31": {
+      "dir": "vault-mpi-31",
+      "sha256": "5f2cfde7cf456038664f055cb765374c070b8eb645a50a050e64670161f78e04"
+    },
+    "40": {
+      "dir": "vault-mpi-40",
+      "sha256": "28d8461edeb9bade377abf0c971b181a57598b066dc8a6c5eaff08899824c3f2"
+    },
+    "41": {
+      "dir": "vault-mpi-41",
+      "sha256": "2341330ac9be4dd69fb08db4390ceaf599c393c7d0336f97efa685e76cce0927"
+    },
+    "50": {
+      "dir": "vault-mpi-50",
+      "sha256": "1f8deb8ceeaeb173982ed94a4e821de22240cea150e3a6b94f306e750c779514"
+    }
+  },
+  "config_sha256": "a386df6148b8e4a0173d3f7aaee405f2da2e494e1cac1697cc2252d298e7855e",
+  "renames_sha256": "d6826a2f80caae93f605219854e774e2e5a5104d99f98b023cdae7c935e1618b"
+}

@@ -1,0 +1,459 @@
+---
+title: "Fixes to Errata in Previous Versions of MPI"
+chapter: changes
+present_in: ["MPI-3.0", "MPI-3.1", "MPI-4.0", "MPI-4.1", "MPI-5.0"]
+tags: [mpi/section, mpi/changes]
+---
+
+# Fixes to Errata in Previous Versions of MPI
+
+Chapter **changes** · in [[versions/v30/sections/changes#Fixes to Errata in Previous Versions of MPI|MPI-3.0]], [[versions/v31/sections/changes#Fixes to Errata in Previous Versions of MPI|MPI-3.1]], [[versions/v40/sections/changes#Fixes to Errata in Previous Versions of MPI|MPI-4.0]], [[versions/v41/sections/changes#Fixes to Errata in Previous Versions of MPI|MPI-4.1]], [[versions/v50/sections/changes#Fixes to Errata in Previous Versions of MPI|MPI-5.0]]
+
+## Changes along the time axis
+
+### MPI-2.2 → MPI-3.0
+
+_Section appears in MPI-3.0._
+
+### MPI-3.0 → MPI-3.1  (1 changed paragraph)
+
+~~1.  Sections [[versions/v31/sections/terms#Fortran Binding Issues|Fortran Binding Issues]] and [[versions/v31/sections/terms#C Binding Issues|C Binding Issues]] on pages [[versions/v31/sections/terms#Fortran Binding Issues|Fortran Binding Issues]] and [[versions/v31/sections/terms#C Binding Issues|C Binding Issues]] , and~~
+
+~~    MPI-2.2 Section 2.6.2 on page 17, lines 41-42, Section 2.6.3 on page 18, lines 15-16, and Section 2.6.4 on page 18, lines 40-41.~~
+
+~~    This is an MPI-2 erratum: The scope for the reserved prefix `MPI_` and the C++ namespace `MPI` is now any name as originally intended in MPI-1.~~
+
+~~2.  Sections [[versions/v31/sections/pt2pt#Message Data|Message Data]] , [[coll-predefined-op]] , [[versions/v31/sections/io#External Data Representation: “external32”|External Data Representation: “external32”]] Table [[versions/v31/sections/io#External Data Representation: “external32”|External Data Representation: “external32”]] ,~~
+
+~~    and Annex [[versions/v31/sections/appLang-Const#Defined Constants|Defined Constants]] on pages [[versions/v31/sections/pt2pt#Message Data|Message Data]] , [[coll-predefined-op]] , [[versions/v31/sections/io#External Data Representation: “external32”|External Data Representation: “external32”]] ,~~
+
+~~    and [[versions/v31/sections/appLang-Const#Defined Constants|Defined Constants]] , and~~
+
+~~    MPI-2.2 Sections 3.2.2, 5.9.2, 13.5.2 Table 13.2, 16.1.16 Table 16.1, and Annex A.1.1 on pages 27, 164, 433, 472 and 513~~
+
+~~    This is an MPI-2.2 erratum: New named predefined datatypes `MPI_CXX_BOOL`, `MPI_CXX_FLOAT_COMPLEX`, `MPI_CXX_DOUBLE_COMPLEX`, and `MPI_CXX_LONG_DOUBLE_COMPLEX` were added in C and Fortran corresponding to the C++ types `bool`, `std::complex<float>`, `std::complex<double>`, and `std::complex<long double>`. These datatypes also correspond to the deprecated C++ predefined datatypes `MPI::BOOL`, `MPI::COMPLEX`, `MPI::DOUBLE_COMPLEX`, and `MPI::LONG_DOUBLE_COMPLEX`, which were removed in MPI-3.0. The non-standard C++ types `Complex<...>` were substituted by the standard types `std::complex<...>`.~~
+
+~~3.  Sections [[coll-predefined-op]] on pages [[coll-predefined-op]] and MPI-2.2 Section 5.9.2, page 165, line 47.~~
+
+~~    This is an MPI-2.2 erratum: `MPI_C_COMPLEX` was added to the “Complex” reduction group.~~
+
+~~4.  Section [[versions/v31/sections/topol#Topology Inquiry Functions|Topology Inquiry Functions]] on page [[versions/v31/sections/topol#Topology Inquiry Functions|Topology Inquiry Functions]] , and~~
+
+~~    MPI-2.2, Section 7.5.5 on page 257, C++ interface on page 264, line 3.~~
+
+~~    This is an MPI-2.2 erratum: The argument `rank` was removed and `in/outdegree` are now defined as `int& indegree` and `int& outdegree` in the C++ interface of [[versions/v31/API/MPI_DIST_GRAPH_NEIGHBORS_COUNT|MPI_DIST_GRAPH_NEIGHBORS_COUNT]] .~~
+
+~~5.  Section [[versions/v31/sections/io#External Data Representation: “external32”|External Data Representation: “external32”]] , Table [[versions/v31/sections/io#External Data Representation: “external32”|External Data Representation: “external32”]] on page [[versions/v31/sections/io#External Data Representation: “external32”|External Data Representation: “external32”]] , and~~
+
+~~    MPI-2.2, Section 13.5.3, Table 13.2 on page 433.~~
+
+~~    This was an MPI-2.2 erratum: The `MPI_C_BOOL` “external32” representation is corrected to a 1-byte size.~~
+
+~~6.  MPI-2.2 Section 16.1.16 on page 471, line 45.~~
+
+~~    This is an MPI-2.2 erratum: The constant `MPI::_LONG_LONG` should be `MPI::LONG_LONG`.~~
+
+~~7.  Annex [[versions/v31/sections/appLang-Const#Defined Constants|Defined Constants]] on page [[versions/v31/sections/appLang-Const#Defined Constants|Defined Constants]] , Table “Optional datatypes (Fortran),” and~~
+
+~~    MPI-2.2, Annex A.1.1, Table on page 517, lines 34, and 37-41.~~
+
+~~    This is an MPI-2.2 erratum: The C++ datatype handles `MPI::INTEGER16`, `MPI::REAL16`, `MPI::F_COMPLEX4`, `MPI::F_COMPLEX8`, `MPI::F_COMPLEX16`, `MPI::F_COMPLEX32` were added to the table.~~
+
+==1.  Chapters [[versions/v31/sections/pt2pt#Point-to-Point Communication|Point-to-Point Communication]] – [[versions/v31/sections/binding#Language Bindings|Language Bindings]] , Annex [[versions/v31/sections/appLang-Fortran2008#Fortran 2008 Bindings with the mpif08 Module|Fortran 2008 Bindings with the mpif08 Module]] on page [[versions/v31/sections/appLang-Fortran2008#Fortran 2008 Bindings with the mpif08 Module|Fortran 2008 Bindings with the mpif08 Module]] , and Example [[coll-exX-fortran]] on page [[coll-exX-fortran]] , and MPI-3.0 Chapters 3-17, Annex A.3 on page 707, and Example 5.21 on page 187.==
+
+==    Within the `mpi_f08` Fortran support method, `BIND(C)` was removed from all `SUBROUTINE`, `FUNCTION`, and `ABSTRACT INTERFACE` definitions.==
+
+==2.  Section [[versions/v31/sections/pt2pt#Return Status|Return Status]] on page [[versions/v31/sections/pt2pt#Return Status|Return Status]] , and MPI-3.0 Section 3.2.5 on page 30.==
+
+==    The three public fields `MPI_SOURCE`, `MPI_TAG`, and `MPI_ERROR` of the Fortran derived type `TYPE(MPI_Status)` must be of type `INTEGER`.==
+
+==3.  Section [[versions/v31/sections/pt2pt#Matching Probe|Matching Probe]] on page [[versions/v31/sections/pt2pt#Matching Probe|Matching Probe]] , and MPI-3.0 Section 3.8.2 on page 67.==
+
+==    The flag arguments of the Fortran interfaces of [[versions/v31/API/MPI_IMPROBE|MPI_IMPROBE]] were originally incorrectly defined as `INTEGER` (instead as `LOGICAL`).==
+
+==4.  Section [[versions/v31/sections/context#Communicator Constructors|Communicator Constructors]] on page [[versions/v31/sections/context#Communicator Constructors|Communicator Constructors]] , and MPI-3.0 Section 6.4.2 on page 237.==
+
+==    In the `mpi_f08` binding of [[versions/v31/API/MPI_COMM_IDUP|MPI_COMM_IDUP]] , the output argument `newcomm` is declared as `ASYNCHRONOUS`.==
+
+==5.  Section [[versions/v31/sections/context#Communicator Info|Communicator Info]] on page [[versions/v31/sections/context#Communicator Info|Communicator Info]] , and MPI-3.0 Section 6.4.4 on page 248.==
+
+==    In the `mpi_f08` binding of [[versions/v31/API/MPI_COMM_SET_INFO|MPI_COMM_SET_INFO]] , the intent of `comm` is `IN`, and the optional output argument `ierror` was missing.==
+
+==6.  Section [[versions/v31/sections/topol#Neighborhood Collective Communication on Process Topologies|Neighborhood Collective Communication on Process Topologies]] on page [[versions/v31/sections/topol#Neighborhood Collective Communication on Process Topologies|Neighborhood Collective Communication on Process Topologies]] , and MPI-3.0 Sections 7.6, on pages 314.==
+
+==    In the case of virtual general graph topolgies (created with [[versions/v31/API/MPI_CART_CREATE|MPI_CART_CREATE]] ), the use of neighborhood collective communication is restricted to adjacency matrices with the number of edges between any two processes is defined to be the same for both processes (i.e., with a symmetric adjacency matrix).==
+
+==7.  Section [[versions/v31/sections/inquiry#Version Inquiries|Version Inquiries]] on page [[versions/v31/sections/inquiry#Version Inquiries|Version Inquiries]] , and MPI-3.0 Section 8.1.1 on page 335.==
+
+==    In the `mpi_f08` binding of [[versions/v31/API/MPI_GET_LIBRARY_VERSION|MPI_GET_LIBRARY_VERSION]] , a typo in the `resultlen` argument was corrected.==
+
+==8.  Sections [[versions/v31/sections/inquiry#Memory Allocation|Memory Allocation]] ( [[versions/v31/API/MPI_ALLOC_MEM|MPI_ALLOC_MEM]] and [[MPI_ALLOC_MEM_CPTR]] ),\     [[versions/v31/sections/one-side#Window That Allocates Memory|Window That Allocates Memory]] ( [[versions/v31/API/MPI_WIN_ALLOCATE|MPI_WIN_ALLOCATE]] and [[MPI_WIN_ALLOCATE_CPTR]] ),\     [[versions/v31/sections/one-side#Window That Allocates Shared Memory|Window That Allocates Shared Memory]] ( [[versions/v31/API/MPI_WIN_ALLOCATE_SHARED|MPI_WIN_ALLOCATE_SHARED]] and [[MPI_WIN_ALLOCATE_SHARED_CPTR]] ),\     [[versions/v31/sections/one-side#Window That Allocates Shared Memory|Window That Allocates Shared Memory]] ( [[versions/v31/API/MPI_WIN_SHARED_QUERY|MPI_WIN_SHARED_QUERY]] and [[MPI_WIN_SHARED_QUERY_CPTR]] ),\     [[versions/v31/sections/tools#Requirements|Requirements]] and [[versions/v31/sections/tools#Complications|Complications]] (Profiling interface), and corresponding sections in MPI-3.0.==
+
+==    The linker name concept was substituted by defining specific procedure names.==
+
+==9.  Section [[versions/v31/sections/one-side#Window Creation|Window Creation]] on page [[versions/v31/sections/one-side#Window Creation|Window Creation]] , and MPI-3.0 Section 11.2.2 on page 407.==
+
+==    The `same_size` info key can be used with all window flavors, and requires that all processes in the process group of the communicator have provided this info key with the same value.==
+
+==10. Section [[versions/v31/sections/one-side#Accumulate Functions|Accumulate Functions]] on page [[versions/v31/sections/one-side#Accumulate Functions|Accumulate Functions]] , and MPI-3.0 Section 11.3.4 on page 424.==
+
+==    Origin buffer arguments to [[versions/v31/API/MPI_GET_ACCUMULATE|MPI_GET_ACCUMULATE]] are ignored when the `MPI_NO_OP` operation is used.==
+
+==11. Section [[versions/v31/sections/one-side#Accumulate Functions|Accumulate Functions]] on page [[versions/v31/sections/one-side#Accumulate Functions|Accumulate Functions]] , and MPI-3.0 Section 11.3.4 on page 424.==
+
+==    Clarify the roles of origin, result, and target communication parameters in [[versions/v31/API/MPI_GET_ACCUMULATE|MPI_GET_ACCUMULATE]] .==
+
+==12. Section [[versions/v31/sections/tools#The MPI Tool Information Interface|The MPI Tool Information Interface]] on page [[versions/v31/sections/tools#The MPI Tool Information Interface|The MPI Tool Information Interface]] , and MPI-3.0 Section 14.3 on page 561==
+
+==    New paragraph and advice to users clarifying intent of variable names in the tools information interface.==
+
+==13. Section [[versions/v31/sections/tools#Convention for Returning Strings|Convention for Returning Strings]] on page [[versions/v31/sections/tools#Convention for Returning Strings|Convention for Returning Strings]] , and MPI-3.0 Section 14.3.3 on page 563.==
+
+==    New paragraph clarifying variable name equivalence in the tools information interface.==
+
+==14. Sections [[versions/v31/sections/tools#Control Variables|Control Variables]] , [[versions/v31/sections/tools#Performance Variables|Performance Variables]] , and [[versions/v31/sections/tools#Variable Categorization|Variable Categorization]] on pages [[versions/v31/sections/tools#Control Variables|Control Variables]] , [[versions/v31/sections/tools#Performance Variables|Performance Variables]] , and [[versions/v31/sections/tools#Variable Categorization|Variable Categorization]] , and==
+
+==    MPI-3.0 Sections 14.3.6, 14.3.7, and 14.3.8 on pages 567, 573, and 584.==
+
+==    In functions [[versions/v31/API/MPI_T_CVAR_GET_INFO|MPI_T_CVAR_GET_INFO]] , [[versions/v31/API/MPI_T_PVAR_GET_INFO|MPI_T_PVAR_GET_INFO]] , and [[versions/v31/API/MPI_T_CATEGORY_GET_INFO|MPI_T_CATEGORY_GET_INFO]] , clarification of parameters that must be identical for equivalent control variable / performance variable / category names across connected processes.==
+
+==15. Section [[versions/v31/sections/tools#Performance Variables|Performance Variables]] on page [[versions/v31/sections/tools#Performance Variables|Performance Variables]] , and MPI-3.0 Section 14.3.7 on page 573.==
+
+==    Clarify return code==
+
+==    of `MPI_T_PVAR\_<span class="roman">{</span>START,STOP,RESET<span class="roman">}</span>` routines.==
+
+==16. Section [[versions/v31/sections/tools#Performance Variables|Performance Variables]] on page [[versions/v31/sections/tools#Performance Variables|Performance Variables]] , and MPI-3.0 Section 14.3.7 on page 579, line 7.==
+
+==    Clarify the return code when bad handle is passed to==
+
+==    an `MPI_T_PVAR\_\*` routine.==
+
+==17. Section [[f90-basic]] on page [[f90-basic]] , and MPI-3.0 Section 17.1.4 on page 603.==
+
+==    The advice to implementors at the end of the section was rewritten and moved into the following section.==
+
+==18. Section [[versions/v31/sections/binding#Interface Specifications, Procedure Names, and the Profiling Interface|Interface Specifications, Procedure Names, and the Profiling Interface]] on page [[versions/v31/sections/binding#Interface Specifications, Procedure Names, and the Profiling Interface|Interface Specifications, Procedure Names, and the Profiling Interface]] , and MPI-3.0 Section 17.1.5 on page 605.==
+
+==    The section was fully rewritten. The linker name concept was substituted by defining specific procedure names.==
+
+==19. Section [[versions/v31/sections/binding#MPI for Different Fortran Standard Versions|MPI for Different Fortran Standard Versions]] on page [[versions/v31/sections/binding#MPI for Different Fortran Standard Versions|MPI for Different Fortran Standard Versions]] , and MPI-3.0 Section 17.1.6 on page 611.==
+
+==    The requirements on `BIND(C)` procedure interfaces were removed.==
+
+==20. Annexes [[versions/v31/sections/appLang-C#C Bindings|C Bindings]] , [[versions/v31/sections/appLang-Fortran2008#Fortran 2008 Bindings with the mpif08 Module|Fortran 2008 Bindings with the mpif08 Module]] , and [[versions/v31/sections/appLang-Fortran#Fortran Bindings with mpif.h or the mpi Module|Fortran Bindings with mpif.h or the mpi Module]] on pages [[versions/v31/sections/appLang-C#C Bindings|C Bindings]] , [[versions/v31/sections/appLang-Fortran2008#Fortran 2008 Bindings with the mpif08 Module|Fortran 2008 Bindings with the mpif08 Module]] , and [[versions/v31/sections/appLang-Fortran#Fortran Bindings with mpif.h or the mpi Module|Fortran Bindings with mpif.h or the mpi Module]] , and==
+
+==    MPI-3.0 Annexes A.2, A.3, and A.4 on pages 685, 707, and 756.==
+
+==    The predefined callback [[versions/v31/API/MPI_CONVERSION_FN_NULL|MPI_CONVERSION_FN_NULL]] was added to all three annexes.==
+
+==21. Annex [[versions/v31/sections/appLang-Fortran2008#Groups, Contexts, Communicators, and Caching Fortran 2008 Bindings|Groups, Contexts, Communicators, and Caching Fortran 2008 Bindings]] on page [[versions/v31/sections/appLang-Fortran2008#Groups, Contexts, Communicators, and Caching Fortran 2008 Bindings|Groups, Contexts, Communicators, and Caching Fortran 2008 Bindings]] , and MPI-3.0 Annex A.3.4 on page 724.==
+
+==    In the `mpi_f08` binding==
+
+==    of\     `MPI\_<span class="roman">{</span>COMM$`|`$TYPE$`|`$WIN<span class="roman">}</span>\_<span class="roman">{</span>DUP$`|`$NULL_COPY$`|`$NULL_DELETE<span class="roman">}</span>\_FN` , all `INTENT(...)` information was removed.==
+
+### MPI-3.1 → MPI-4.0  (1 changed paragraph)
+
+~~1.  Chapters [[versions/v40/sections/pt2pt#Point-to-Point Communication|Point-to-Point Communication]] – [[versions/v40/sections/binding#Language Bindings|Language Bindings]] , Annex [[versions/v40/sections/appLang-Fortran2008#Fortran 2008 Bindings with the mpif08 Module|Fortran 2008 Bindings with the mpif08 Module]] on page [[versions/v40/sections/appLang-Fortran2008#Fortran 2008 Bindings with the mpif08 Module|Fortran 2008 Bindings with the mpif08 Module]] , and Example [[coll-exX-fortran]] on page [[coll-exX-fortran]] , and MPI-3.0 Chapters 3-17, Annex A.3 on page 707, and Example 5.21 on page 187.~~
+
+~~    Within the `mpi_f08` Fortran support method, `BIND(C)` was removed from all `SUBROUTINE`, `FUNCTION`, and `ABSTRACT INTERFACE` definitions.~~
+
+~~2.  Section [[versions/v40/sections/pt2pt#Return Status|Return Status]] on page [[versions/v40/sections/pt2pt#Return Status|Return Status]] , and MPI-3.0 Section 3.2.5 on page 30.~~
+
+~~    The three public fields `MPI_SOURCE`, `MPI_TAG`, and `MPI_ERROR` of the Fortran derived type `TYPE(MPI_Status)` must be of type `INTEGER`.~~
+
+~~3.  Section [[versions/v40/sections/pt2pt#Matching Probe|Matching Probe]] on page [[versions/v40/sections/pt2pt#Matching Probe|Matching Probe]] , and MPI-3.0 Section 3.8.2 on page 67.~~
+
+~~    The flag arguments of the Fortran interfaces of [[versions/v40/API/MPI_IMPROBE|MPI_IMPROBE]] were originally incorrectly defined as `INTEGER` (instead as `LOGICAL`).~~
+
+~~4.  Section [[versions/v40/sections/context#Communicator Constructors|Communicator Constructors]] on page [[versions/v40/sections/context#Communicator Constructors|Communicator Constructors]] , and MPI-3.0 Section 6.4.2 on page 237.~~
+
+~~    In the `mpi_f08` binding of [[versions/v40/API/MPI_COMM_IDUP|MPI_COMM_IDUP]] , the output argument `newcomm` is declared as `ASYNCHRONOUS`.~~
+
+~~5.  Section [[versions/v40/sections/context#Communicator Info|Communicator Info]] on page [[versions/v40/sections/context#Communicator Info|Communicator Info]] , and MPI-3.0 Section 6.4.4 on page 248.~~
+
+~~    In the `mpi_f08` binding of [[versions/v40/API/MPI_COMM_SET_INFO|MPI_COMM_SET_INFO]] , the intent of `comm` is `IN`, and the optional output argument `ierror` was missing.~~
+
+~~6.  Section [[versions/v40/sections/topol#Neighborhood Collective Communication on Process Topologies|Neighborhood Collective Communication on Process Topologies]] on page [[versions/v40/sections/topol#Neighborhood Collective Communication on Process Topologies|Neighborhood Collective Communication on Process Topologies]] , and MPI-3.0 Sections 7.6, on pages 314.~~
+
+~~    In the case of virtual general graph topolgies (created with [[versions/v40/API/MPI_CART_CREATE|MPI_CART_CREATE]] ), the use of neighborhood collective communication is restricted to adjacency matrices with the number of edges between any two processes is defined to be the same for both processes (i.e., with a symmetric adjacency matrix).~~
+
+~~7.  Section [[versions/v40/sections/inquiry#Version Inquiries|Version Inquiries]] on page [[versions/v40/sections/inquiry#Version Inquiries|Version Inquiries]] , and MPI-3.0 Section 8.1.1 on page 335.~~
+
+~~    In the `mpi_f08` binding of [[versions/v40/API/MPI_GET_LIBRARY_VERSION|MPI_GET_LIBRARY_VERSION]] , a typo in the `resultlen` argument was corrected.~~
+
+~~8.  Sections [[versions/v40/sections/inquiry#Memory Allocation|Memory Allocation]] ( [[versions/v40/API/MPI_ALLOC_MEM|MPI_ALLOC_MEM]] and [[MPI_ALLOC_MEM_CPTR]] ),\     [[versions/v40/sections/one-side#Window That Allocates Memory|Window That Allocates Memory]] ( [[versions/v40/API/MPI_WIN_ALLOCATE|MPI_WIN_ALLOCATE]] and [[MPI_WIN_ALLOCATE_CPTR]] ),\     [[versions/v40/sections/one-side#Window That Allocates Shared Memory|Window That Allocates Shared Memory]] ( [[versions/v40/API/MPI_WIN_ALLOCATE_SHARED|MPI_WIN_ALLOCATE_SHARED]] and [[MPI_WIN_ALLOCATE_SHARED_CPTR]] ),\     [[versions/v40/sections/one-side#Window That Allocates Shared Memory|Window That Allocates Shared Memory]] ( [[versions/v40/API/MPI_WIN_SHARED_QUERY|MPI_WIN_SHARED_QUERY]] and [[MPI_WIN_SHARED_QUERY_CPTR]] ),\     [[versions/v40/sections/tools#Requirements|Requirements]] and [[versions/v40/sections/tools#Complications|Complications]] (Profiling interface), and corresponding sections in MPI-3.0.~~
+
+~~    The linker name concept was substituted by defining specific procedure names.~~
+
+~~9.  Section [[versions/v40/sections/one-side#Window Creation|Window Creation]] on page [[versions/v40/sections/one-side#Window Creation|Window Creation]] , and MPI-3.0 Section 11.2.2 on page 407.~~
+
+~~    The `same_size` info key can be used with all window flavors, and requires that all processes in the process group of the communicator have provided this info key with the same value.~~
+
+~~10. Section [[versions/v40/sections/one-side#Accumulate Functions|Accumulate Functions]] on page [[versions/v40/sections/one-side#Accumulate Functions|Accumulate Functions]] , and MPI-3.0 Section 11.3.4 on page 424.~~
+
+~~    Origin buffer arguments to [[versions/v40/API/MPI_GET_ACCUMULATE|MPI_GET_ACCUMULATE]] are ignored when the `MPI_NO_OP` operation is used.~~
+
+~~11. Section [[versions/v40/sections/one-side#Accumulate Functions|Accumulate Functions]] on page [[versions/v40/sections/one-side#Accumulate Functions|Accumulate Functions]] , and MPI-3.0 Section 11.3.4 on page 424.~~
+
+~~    Clarify the roles of origin, result, and target communication parameters in [[versions/v40/API/MPI_GET_ACCUMULATE|MPI_GET_ACCUMULATE]] .~~
+
+~~12. Section [[versions/v40/sections/tools#The MPI Tool Information Interface|The MPI Tool Information Interface]] on page [[versions/v40/sections/tools#The MPI Tool Information Interface|The MPI Tool Information Interface]] , and MPI-3.0 Section 14.3 on page 561~~
+
+~~    New paragraph and advice to users clarifying intent of variable names in the tools information interface.~~
+
+~~13. Section [[versions/v40/sections/tools#Convention for Returning Strings|Convention for Returning Strings]] on page [[versions/v40/sections/tools#Convention for Returning Strings|Convention for Returning Strings]] , and MPI-3.0 Section 14.3.3 on page 563.~~
+
+~~    New paragraph clarifying variable name equivalence in the tools information interface.~~
+
+~~14. Sections [[versions/v40/sections/tools#Control Variables|Control Variables]] , [[versions/v40/sections/tools#Performance Variables|Performance Variables]] , and [[versions/v40/sections/tools#Variable Categorization|Variable Categorization]] on pages [[versions/v40/sections/tools#Control Variables|Control Variables]] , [[versions/v40/sections/tools#Performance Variables|Performance Variables]] , and [[versions/v40/sections/tools#Variable Categorization|Variable Categorization]] , and~~
+
+~~    MPI-3.0 Sections 14.3.6, 14.3.7, and 14.3.8 on pages 567, 573, and 584.~~
+
+~~    In functions [[versions/v40/API/MPI_T_CVAR_GET_INFO|MPI_T_CVAR_GET_INFO]] , [[versions/v40/API/MPI_T_PVAR_GET_INFO|MPI_T_PVAR_GET_INFO]] , and [[versions/v40/API/MPI_T_CATEGORY_GET_INFO|MPI_T_CATEGORY_GET_INFO]] , clarification of parameters that must be identical for equivalent control variable / performance variable / category names across connected processes.~~
+
+~~15. Section [[versions/v40/sections/tools#Performance Variables|Performance Variables]] on page [[versions/v40/sections/tools#Performance Variables|Performance Variables]] , and MPI-3.0 Section 14.3.7 on page 573.~~
+
+~~    Clarify return code~~
+
+~~    of `MPI_T_PVAR\_<span class="roman">{</span>START,STOP,RESET<span class="roman">}</span>` routines.~~
+
+~~16. Section [[versions/v40/sections/tools#Performance Variables|Performance Variables]] on page [[versions/v40/sections/tools#Performance Variables|Performance Variables]] , and MPI-3.0 Section 14.3.7 on page 579, line 7.~~
+
+~~    Clarify the return code when bad handle is passed to~~
+
+~~    an `MPI_T_PVAR\_\*` routine.~~
+
+~~17. Section [[f90-basic]] on page [[f90-basic]] , and MPI-3.0 Section 17.1.4 on page 603.~~
+
+~~    The advice to implementors at the end of the section was rewritten and moved into the following section.~~
+
+~~18. Section [[versions/v40/sections/binding#Interface Specifications, Procedure Names, and the Profiling Interface|Interface Specifications, Procedure Names, and the Profiling Interface]] on page [[versions/v40/sections/binding#Interface Specifications, Procedure Names, and the Profiling Interface|Interface Specifications, Procedure Names, and the Profiling Interface]] , and MPI-3.0 Section 17.1.5 on page 605.~~
+
+~~    The section was fully rewritten. The linker name concept was substituted by defining specific procedure names.~~
+
+~~19. Section [[versions/v40/sections/binding#MPI for Different Fortran Standard Versions|MPI for Different Fortran Standard Versions]] on page [[versions/v40/sections/binding#MPI for Different Fortran Standard Versions|MPI for Different Fortran Standard Versions]] , and MPI-3.0 Section 17.1.6 on page 611.~~
+
+~~    The requirements on `BIND(C)` procedure interfaces were removed.~~
+
+~~20. Annexes [[versions/v40/sections/appLang-C#C Bindings|C Bindings]] , [[versions/v40/sections/appLang-Fortran2008#Fortran 2008 Bindings with the mpif08 Module|Fortran 2008 Bindings with the mpif08 Module]] , and [[versions/v40/sections/appLang-Fortran#Fortran Bindings with mpif.h or the mpi Module|Fortran Bindings with mpif.h or the mpi Module]] on pages [[versions/v40/sections/appLang-C#C Bindings|C Bindings]] , [[versions/v40/sections/appLang-Fortran2008#Fortran 2008 Bindings with the mpif08 Module|Fortran 2008 Bindings with the mpif08 Module]] , and [[versions/v40/sections/appLang-Fortran#Fortran Bindings with mpif.h or the mpi Module|Fortran Bindings with mpif.h or the mpi Module]] , and~~
+
+~~    MPI-3.0 Annexes A.2, A.3, and A.4 on pages 685, 707, and 756.~~
+
+~~    The predefined callback [[versions/v40/API/MPI_CONVERSION_FN_NULL|MPI_CONVERSION_FN_NULL]] was added to all three annexes.~~
+
+~~21. Annex [[versions/v40/sections/appLang-Fortran2008#Groups, Contexts, Communicators, and Caching Fortran 2008 Bindings|Groups, Contexts, Communicators, and Caching Fortran 2008 Bindings]] on page [[versions/v40/sections/appLang-Fortran2008#Groups, Contexts, Communicators, and Caching Fortran 2008 Bindings|Groups, Contexts, Communicators, and Caching Fortran 2008 Bindings]] , and MPI-3.0 Annex A.3.4 on page 724.~~
+
+~~    In the `mpi_f08` binding~~
+
+~~    of\     `MPI\_<span class="roman">{</span>COMM$`|`$TYPE$`|`$WIN<span class="roman">}</span>\_<span class="roman">{</span>DUP$`|`$NULL_COPY$`|`$NULL_DELETE<span class="roman">}</span>\_FN` , all `INTENT(...)` information was removed.~~
+
+==1.  Sections [[versions/v40/sections/topol#Neighborhood Gather|Neighborhood Gather]] , [[versions/v40/sections/topol#Neighbor Alltoall|Neighbor Alltoall]] and [[versions/v40/sections/topol#An Application Example|An Application Example]] on pages [[versions/v40/sections/topol#Neighborhood Gather|Neighborhood Gather]] , [[versions/v40/sections/topol#Neighbor Alltoall|Neighbor Alltoall]] and [[versions/v40/sections/topol#An Application Example|An Application Example]] , and MPI-3.1 Sections 7.6.1, 7.6.2 and 7.8 on pages 315, 318 and 329.==
+
+==    `MPI_NEIGHBOR_ALLTOALL<span class="roman">{</span>$`|`$V$`|`$W<span class="roman">}</span>` and==
+
+==    `MPI_NEIGHBOR_ALLGATHER<span class="roman">{</span>$`|`$V<span class="roman">}</span>` for Cartesian virtual grids were clarified. An advice to implementors was added to illustrate a correct implementation for the case of `periods[d]==1` or `.TRUE.` and `dims[d]==1` or `2` in a direction `d`.==
+
+==2.  Section [[versions/v40/sections/binding#Status|Status]] on page [[versions/v40/sections/binding#Status|Status]] , and MPI-3.1 Section 17.2.5 on page 657 line 11.==
+
+==    Clarified that the [[versions/v40/API/MPI_STATUS_F2F08|MPI_STATUS_F2F08]] and [[versions/v40/API/MPI_STATUS_F082F|MPI_STATUS_F082F]] routines and the declaration for `TYPE(MPI_Status)` are not supposed to appear with `mpif.h`.==
+
+==3.  Sections [[versions/v40/sections/terms#Named Constants|Named Constants]] , [[versions/v40/sections/binding#Status|Status]] , and [[versions/v40/sections/appLang-Const#Defined Constants|Defined Constants]] on pages [[versions/v40/sections/terms#Named Constants|Named Constants]] , [[versions/v40/sections/binding#Status|Status]] , and [[versions/v40/sections/appLang-Const#Defined Constants|Defined Constants]] , and MPI-3.1 Sections 2.5.4, 17.2.5, and A.1.1 on pages 15, 656, and 669.==
+
+==    Define the C constants `MPI_F_STATUS_SIZE`, `MPI_F_SOURCE`, `MPI_F_TAG`, and `MPI_F_ERROR`.==
+
+==4.  Section [[versions/v40/sections/binding#Status|Status]] on page [[versions/v40/sections/binding#Status|Status]] , and MPI-3.1 Section 17.2.5 on page 658.==
+
+==    Added missing `const` to IN parameters for [[versions/v40/API/MPI_STATUS_F2F08|MPI_STATUS_F2F08]] and [[versions/v40/API/MPI_STATUS_F082F|MPI_STATUS_F082F]] .==
+
+### MPI-4.0 → MPI-4.1  (1 changed paragraph)
+
+~~1.  Sections [[versions/v41/sections/topol#Neighborhood Gather|Neighborhood Gather]] , [[versions/v41/sections/topol#Neighbor Alltoall|Neighbor Alltoall]] and [[versions/v41/sections/topol#An Application Example|An Application Example]] on pages [[versions/v41/sections/topol#Neighborhood Gather|Neighborhood Gather]] , [[versions/v41/sections/topol#Neighbor Alltoall|Neighbor Alltoall]] and [[versions/v41/sections/topol#An Application Example|An Application Example]] , and MPI-3.1 Sections 7.6.1, 7.6.2 and 7.8 on pages 315, 318 and 329.~~
+
+~~    `MPI_NEIGHBOR_ALLTOALL<span class="roman">{</span>$`|`$V$`|`$W<span class="roman">}</span>` and~~
+
+~~    `MPI_NEIGHBOR_ALLGATHER<span class="roman">{</span>$`|`$V<span class="roman">}</span>` for Cartesian virtual grids were clarified. An advice to implementors was added to illustrate a correct implementation for the case of `periods[d]==1` or `.TRUE.` and `dims[d]==1` or `2` in a direction `d`.~~
+
+~~2.  Section [[versions/v41/sections/binding#Status|Status]] on page [[versions/v41/sections/binding#Status|Status]] , and MPI-3.1 Section 17.2.5 on page 657 line 11.~~
+
+~~    Clarified that the [[versions/v41/API/MPI_STATUS_F2F08|MPI_STATUS_F2F08]] and [[versions/v41/API/MPI_STATUS_F082F|MPI_STATUS_F082F]] routines and the declaration for `TYPE(MPI_Status)` are not supposed to appear with `mpif.h`.~~
+
+~~3.  Sections [[versions/v41/sections/terms#Named Constants|Named Constants]] , [[versions/v41/sections/binding#Status|Status]] , and [[versions/v41/sections/appLang-Const#Defined Constants|Defined Constants]] on pages [[versions/v41/sections/terms#Named Constants|Named Constants]] , [[versions/v41/sections/binding#Status|Status]] , and [[versions/v41/sections/appLang-Const#Defined Constants|Defined Constants]] , and MPI-3.1 Sections 2.5.4, 17.2.5, and A.1.1 on pages 15, 656, and 669.~~
+
+~~    Define the C constants `MPI_F_STATUS_SIZE`, `MPI_F_SOURCE`, `MPI_F_TAG`, and `MPI_F_ERROR`.~~
+
+~~4.  Section [[versions/v41/sections/binding#Status|Status]] on page [[versions/v41/sections/binding#Status|Status]] , and MPI-3.1 Section 17.2.5 on page 658.~~
+
+~~    Added missing `const` to IN parameters for [[versions/v41/API/MPI_STATUS_F2F08|MPI_STATUS_F2F08]] and [[versions/v41/API/MPI_STATUS_F082F|MPI_STATUS_F082F]] .~~
+
+==1.  Sections [[versions/v41/sections/terms#MPI Operations|MPI Operations]] , [[versions/v41/sections/pt2pt#Semantics of Point-to-Point Communication|Semantics of Point-to-Point Communication]] , [[versions/v41/sections/pt2pt#Nonblocking Communication|Nonblocking Communication]] , [[versions/v41/sections/pt2pt#Probe and Cancel|Probe and Cancel]] , [[versions/v41/sections/coll#Nonblocking Collective Operations|Nonblocking Collective Operations]] , [[versions/v41/sections/context#MPI’s Support for Libraries|MPI’s Support for Libraries]] , [[versions/v41/sections/context#Contexts|Contexts]] , [[versions/v41/sections/context#Communicator Constructors|Communicator Constructors]] , [[versions/v41/sections/dynamic#Clarifications|Clarifications]] , [[versions/v41/sections/io#Preallocating Space for a File|Preallocating Space for a File]] , [[versions/v41/sections/io#Nonblocking Collective File Operations|Nonblocking Collective File Operations]] , [[versions/v41/sections/binding#Problems with Code Movement and Register Optimization|Problems with Code Movement and Register Optimization]] , [[versions/v41/sections/binding#Comparison with C|Comparison with C]] , on pages [[versions/v41/sections/terms#MPI Operations|MPI Operations]] , [[versions/v41/sections/pt2pt#Semantics of Point-to-Point Communication|Semantics of Point-to-Point Communication]] , [[versions/v41/sections/pt2pt#Nonblocking Communication|Nonblocking Communication]] , [[versions/v41/sections/pt2pt#Probe and Cancel|Probe and Cancel]] , [[versions/v41/sections/coll#Nonblocking Collective Operations|Nonblocking Collective Operations]] , [[versions/v41/sections/context#MPI’s Support for Libraries|MPI’s Support for Libraries]] , [[versions/v41/sections/context#Contexts|Contexts]] , [[versions/v41/sections/context#Communicator Constructors|Communicator Constructors]] , [[versions/v41/sections/dynamic#Clarifications|Clarifications]] , [[versions/v41/sections/io#Preallocating Space for a File|Preallocating Space for a File]] , [[versions/v41/sections/io#Nonblocking Collective File Operations|Nonblocking Collective File Operations]] , [[versions/v41/sections/binding#Problems with Code Movement and Register Optimization|Problems with Code Movement and Register Optimization]] , [[versions/v41/sections/binding#Comparison with C|Comparison with C]] and MPI-4.0 Sections 2.4.1, 3.5, 3.7, 3.8, 6.12, 7.1.2, 7.2.2, 7.4.2, 11.6.2, 14.2.5, 14.6.5, 19.1.17, 19.1.20 on pages 13, 54, 60, 84, 250, 312, 314, 327, 518, 650, 713, 826, and 834.==
+
+==    The term *pending* communication or I/O operation is defined as *in the active operation state*. If the phrase *pending communication operation* in MPI-1.1 to MPI-4.0 additionally includes *decoupled MPI activities*, then this has been added explicitly. If this phrase had a different meaning, it was replaced accordingly, see item [[versions/v41/sections/changes#Fixes to Errata in Previous Versions of MPI|Fixes to Errata in Previous Versions of MPI]] in this list and item [[versions/v41/sections/changes#Changes in MPI-4.1|Changes in MPI-4.1]] in [[versions/v41/sections/changes#Changes in MPI-4.1|Changes in MPI-4.1]] .==
+
+==2.  Sections [[versions/v41/sections/terms#Named Constants|Named Constants]] and [[versions/v41/sections/appLang-Const#Defined Constants|Defined Constants]] on pages [[versions/v41/sections/terms#Named Constants|Named Constants]] and [[versions/v41/sections/appLang-Const#Defined Constants|Defined Constants]] , and MPI-4.0 Sections 2.5.4 and A.1.1 on pages 20 and 857.==
+
+==    The implementation of named MPI *constants* in C and Fortran and implied usage restrictions were clarified.==
+
+==3.  Section [[versions/v41/sections/terms#Named Constants|Named Constants]] on page [[versions/v41/sections/terms#Named Constants|Named Constants]] , and MPI-4.0 Section 2.5.4 on page 20.==
+
+==    Add `MPI_MAX_PSET_NAME_LEN` and `MPI_MAX_STRINGTAG_LEN` to list of named constants.==
+
+==4.  Sections [[versions/v41/sections/pt2pt#Persistent Communication Requests|Persistent Communication Requests]] , [[versions/v41/sections/dynamic#Finalizing MPI|Finalizing MPI]] , [[versions/v41/sections/dynamic#Session Creation and Destruction Methods|Session Creation and Destruction Methods]] and [[versions/v41/sections/dynamic#Releasing Connections|Releasing Connections]] on pages [[versions/v41/sections/pt2pt#Persistent Communication Requests|Persistent Communication Requests]] , [[versions/v41/sections/dynamic#Finalizing MPI|Finalizing MPI]] , [[versions/v41/sections/dynamic#Session Creation and Destruction Methods|Session Creation and Destruction Methods]] and [[versions/v41/sections/dynamic#Releasing Connections|Releasing Connections]] and MPI-4.0 Sections 3.9, 11.2.2, 11.3.1 and 11.10.4 on pages 94, 494, 501 and 546.==
+
+==    The requirements for calling [[versions/v41/API/MPI_FINALIZE|MPI_FINALIZE]] , [[versions/v41/API/MPI_SESSION_FINALIZE|MPI_SESSION_FINALIZE]] , and [[versions/v41/API/MPI_COMM_DISCONNECT|MPI_COMM_DISCONNECT]] and the outcome of [[versions/v41/API/MPI_COMM_DISCONNECT|MPI_COMM_DISCONNECT]] , especially for related inactive persistent request handles, were clarified.==
+
+==5.  Section [[versions/v41/sections/part#Partitioned Communication Examples|Partitioned Communication Examples]] on page [[versions/v41/sections/part#Partitioned Communication Examples|Partitioned Communication Examples]] , and MPI-4.0 Section 4.3.3. on page 115. Example [[partexample4]] on page [[partexample4]] , and MPI-4.0 Example 4.4 on page 115.==
+
+==    Fixed and simplified erroneous MPI-4.0 Example 4.4. The example could deadlock due to incorrect use of the `flag` variable in multiple MPI test procedure calls or thread concurrent access. The example was also simplified by removing unnecessary code and updated according to current best practice in OpenMP.==
+
+==6.  Section [[versions/v41/sections/part#Partition Communication with Threads/Tasks Using OpenMP 4.0 or later|Partition Communication with Threads/Tasks Using OpenMP 4.0 or later]] on page [[versions/v41/sections/part#Partition Communication with Threads/Tasks Using OpenMP 4.0 or later|Partition Communication with Threads/Tasks Using OpenMP 4.0 or later]] , MPI-4 Section 4.3.1 on page 112.==
+
+==    Example [[part-example2]] was corrected.==
+
+==7.  Section [[versions/v41/sections/datatypes#Commit and Free|Commit and Free]] on page [[versions/v41/sections/datatypes#Commit and Free|Commit and Free]] and MPI-4.0 Section 5.1.9 on page 150.==
+
+==    The relationship between [[versions/v41/API/MPI_TYPE_COMMIT|MPI_TYPE_COMMIT]] and initialization/finalization of a session (or the World Model) with [[versions/v41/API/MPI_INIT|MPI_INIT]] , [[versions/v41/API/MPI_INIT_THREAD|MPI_INIT_THREAD]] , [[versions/v41/API/MPI_FINALIZE|MPI_FINALIZE]] , [[versions/v41/API/MPI_SESSION_INIT|MPI_SESSION_INIT]] , and [[versions/v41/API/MPI_SESSION_FINALIZE|MPI_SESSION_FINALIZE]] was clarified.==
+
+==8.  Sections [[versions/v41/sections/context#Communicator Constructors|Communicator Constructors]] on page [[versions/v41/sections/context#Communicator Constructors|Communicator Constructors]] and [[versions/v41/sections/context#Inter-Communicator Operations|Inter-Communicator Operations]] on page [[versions/v41/sections/context#Inter-Communicator Operations|Inter-Communicator Operations]] , and MPI-4.0 Section 7.4.2 on page 343 and Section 7.6.2 on page 360.==
+
+==    Use of the `errhandler` argument to [[versions/v41/API/MPI_COMM_CREATE_FROM_GROUP|MPI_COMM_CREATE_FROM_GROUP]] and [[versions/v41/API/MPI_INTERCOMM_CREATE_FROM_GROUPS|MPI_INTERCOMM_CREATE_FROM_GROUPS]] is clarified. The error handler invoked when an error is encountered during invocation of these functions is also clarified.==
+
+==9.  Section [[versions/v41/sections/context#Communicator Constructors|Communicator Constructors]] on page [[versions/v41/sections/context#Communicator Constructors|Communicator Constructors]] , MPI-3 Section 6.4.2 on page 237, MPI-3.1 Section 6.4.2 on page 237, and MPI-4 Section 7.4.2 on page 327.==
+
+==    The description of [[versions/v41/API/MPI_COMM_DUP|MPI_COMM_DUP]] now clarifies that error handlers are also copied in the ouptut communicator produced when this procedure is called.==
+
+==10. Section [[versions/v41/sections/topol#Topology Inquiry Functions|Topology Inquiry Functions]] on page [[versions/v41/sections/topol#Topology Inquiry Functions|Topology Inquiry Functions]] and MPI-4.0 Section 8.5.5 on page 403.==
+
+==    The unintended change in the specification of argument `coords` in [[versions/v41/API/MPI_CART_COORDS|MPI_CART_COORDS]] in MPI-4.0 is reverted to the original meaning in MPI-1.1 to MPI-3.1. It is clarified that the outcome of [[versions/v41/API/MPI_CART_GET|MPI_CART_GET]] and [[versions/v41/API/MPI_CART_COORDS|MPI_CART_COORDS]] is unspecified for the case that `maxdims` is less than `ndims`.==
+
+==11. Section [[versions/v41/sections/inquiry#Error Handling|Error Handling]] on page [[versions/v41/sections/inquiry#Error Handling|Error Handling]] and MPI-4.0 Section 9.3 on page 458.==
+
+==    The fallback error-handler for the Sessions Model was clarified.==
+
+==12. Section [[versions/v41/sections/inquiry#Error Classes, Error Codes, and Error Handlers|Error Classes, Error Codes, and Error Handlers]] on page [[versions/v41/sections/inquiry#Error Classes, Error Codes, and Error Handlers|Error Classes, Error Codes, and Error Handlers]] and MPI-4.0 Section 9.5 on page 473.==
+
+==    It was clarified that `MPI_LASTUSEDCODE` is only available in the World Model.==
+
+==13. Sections [[versions/v41/sections/dynamic#Introduction|Introduction]] and [[versions/v41/sections/dynamic#The Dynamic Process Model|The Dynamic Process Model]] on pages [[versions/v41/sections/dynamic#Introduction|Introduction]] and [[versions/v41/sections/dynamic#The Dynamic Process Model|The Dynamic Process Model]] , and MPI-4.0 Sections 11.1 and 11.7 on pages 487 and 521.==
+
+==    It was clarified that the usage of the Dynamic Process Model requires the World Model to be initialized.==
+
+==14. Section [[versions/v41/sections/one-side#General Active Target Synchronization|General Active Target Synchronization]] on page [[versions/v41/sections/one-side#General Active Target Synchronization|General Active Target Synchronization]] and MPI-4 Section 12.5.2 on page 598.==
+
+==    The definition of [[versions/v41/API/MPI_WIN_TEST|MPI_WIN_TEST]] was clarified.==
+
+==15. Section [[versions/v41/sections/one-side#Flush and Sync|Flush and Sync]] on page [[versions/v41/sections/one-side#Flush and Sync|Flush and Sync]] , MPI-3 Section 11.5.4 on page 449, MPI-3.1 Section 11.5.4 on page 448, and MPI-4 Section 12.5.4 on page 605.==
+
+==    The description of [[versions/v41/API/MPI_WIN_SYNC|MPI_WIN_SYNC]] was clarified to include its use for ordering load/store accesses to shared memory. A statement was added to highlight that a call to [[versions/v41/API/MPI_WIN_SYNC|MPI_WIN_SYNC]] does not complete pending RMA operations and that a call to [[versions/v41/API/MPI_WIN_SYNC|MPI_WIN_SYNC]] does not guarantee any progress of MPI operations.==
+
+==16. Section [[versions/v41/sections/ei#Associating Information with Status|Associating Information with Status]] on page [[versions/v41/sections/ei#Associating Information with Status|Associating Information with Status]] , and MPI-4 Section 13.3 on page 640.==
+
+==    Large count interface of [[versions/v41/API/MPI_STATUS_SET_ELEMENTS|MPI_STATUS_SET_ELEMENTS]] had been missing and was added.==
+
+==17. Sections [[versions/v41/sections/tools#Control Variables|Control Variables]] and [[versions/v41/sections/tools#Performance Variables|Performance Variables]] on pages [[versions/v41/sections/tools#Control Variables|Control Variables]] and [[versions/v41/sections/tools#Performance Variables|Performance Variables]] , MPI-3 Sections 14.3.6 and 14.3.7 on pages 567 and 573, MPI-3.1 Sections 14.3.6 and 14.3.7 on pages 573 and 580, and MPI-4 Sections 15.3.6 and 15.3.7 on pages 738 and 744.==
+
+==    The intent of handle arguments of the language independent definition of [[versions/v41/API/MPI_T_CVAR_WRITE|MPI_T_CVAR_WRITE]] , [[versions/v41/API/MPI_T_PVAR_HANDLE_ALLOC|MPI_T_PVAR_HANDLE_ALLOC]] , [[versions/v41/API/MPI_T_PVAR_HANDLE_FREE|MPI_T_PVAR_HANDLE_FREE]] , [[versions/v41/API/MPI_T_PVAR_START|MPI_T_PVAR_START]] , [[versions/v41/API/MPI_T_PVAR_STOP|MPI_T_PVAR_STOP]] , [[versions/v41/API/MPI_T_PVAR_WRITE|MPI_T_PVAR_WRITE]] , and [[versions/v41/API/MPI_T_PVAR_RESET|MPI_T_PVAR_RESET]] were marked as INOUT in accordance with the special rule for handles described in Section [[terms-procedure-specification]] .==
+
+### MPI-4.1 → MPI-5.0  (1 changed paragraph)
+
+~~1.  Sections [[versions/v50/sections/terms#MPI Operations|MPI Operations]] , [[versions/v50/sections/pt2pt#Semantics of Point-to-Point Communication|Semantics of Point-to-Point Communication]] , [[versions/v50/sections/pt2pt#Nonblocking Communication|Nonblocking Communication]] , [[versions/v50/sections/pt2pt#Probe and Cancel|Probe and Cancel]] , [[versions/v50/sections/coll#Nonblocking Collective Operations|Nonblocking Collective Operations]] , [[versions/v50/sections/context#MPI’s Support for Libraries|MPI’s Support for Libraries]] , [[versions/v50/sections/context#Contexts|Contexts]] , [[versions/v50/sections/context#Communicator Constructors|Communicator Constructors]] , [[versions/v50/sections/dynamic#Clarifications|Clarifications]] , [[versions/v50/sections/io#Preallocating Space for a File|Preallocating Space for a File]] , [[versions/v50/sections/io#Nonblocking Collective File Operations|Nonblocking Collective File Operations]] , [[versions/v50/sections/binding#Problems with Code Movement and Register Optimization|Problems with Code Movement and Register Optimization]] , [[versions/v50/sections/binding#Comparison with C|Comparison with C]] , on pages [[versions/v50/sections/terms#MPI Operations|MPI Operations]] , [[versions/v50/sections/pt2pt#Semantics of Point-to-Point Communication|Semantics of Point-to-Point Communication]] , [[versions/v50/sections/pt2pt#Nonblocking Communication|Nonblocking Communication]] , [[versions/v50/sections/pt2pt#Probe and Cancel|Probe and Cancel]] , [[versions/v50/sections/coll#Nonblocking Collective Operations|Nonblocking Collective Operations]] , [[versions/v50/sections/context#MPI’s Support for Libraries|MPI’s Support for Libraries]] , [[versions/v50/sections/context#Contexts|Contexts]] , [[versions/v50/sections/context#Communicator Constructors|Communicator Constructors]] , [[versions/v50/sections/dynamic#Clarifications|Clarifications]] , [[versions/v50/sections/io#Preallocating Space for a File|Preallocating Space for a File]] , [[versions/v50/sections/io#Nonblocking Collective File Operations|Nonblocking Collective File Operations]] , [[versions/v50/sections/binding#Problems with Code Movement and Register Optimization|Problems with Code Movement and Register Optimization]] , [[versions/v50/sections/binding#Comparison with C|Comparison with C]] and MPI-4.0 Sections 2.4.1, 3.5, 3.7, 3.8, 6.12, 7.1.2, 7.2.2, 7.4.2, 11.6.2, 14.2.5, 14.6.5, 19.1.17, 19.1.20 on pages 13, 54, 60, 84, 250, 312, 314, 327, 518, 650, 713, 826, and 834.~~
+
+~~    The term *pending* communication or I/O operation is defined as *in the active operation state*. If the phrase *pending communication operation* in MPI-1.1 to MPI-4.0 additionally includes *decoupled MPI activities*, then this has been added explicitly. If this phrase had a different meaning, it was replaced accordingly, see item [[versions/v50/sections/changes#Fixes to Errata in Previous Versions of MPI|Fixes to Errata in Previous Versions of MPI]] in this list and item [[versions/v50/sections/changes#Changes in MPI-4.1|Changes in MPI-4.1]] in [[versions/v50/sections/changes#Changes in MPI-4.1|Changes in MPI-4.1]] .~~
+
+~~2.  Sections [[versions/v50/sections/terms#Named Constants|Named Constants]] and [[versions/v50/sections/appLang-Const#Defined Constants|Defined Constants]] on pages [[versions/v50/sections/terms#Named Constants|Named Constants]] and [[versions/v50/sections/appLang-Const#Defined Constants|Defined Constants]] , and MPI-4.0 Sections 2.5.4 and A.1.1 on pages 20 and 857.~~
+
+~~    The implementation of named MPI *constants* in C and Fortran and implied usage restrictions were clarified.~~
+
+~~3.  Section [[versions/v50/sections/terms#Named Constants|Named Constants]] on page [[versions/v50/sections/terms#Named Constants|Named Constants]] , and MPI-4.0 Section 2.5.4 on page 20.~~
+
+~~    Add `MPI_MAX_PSET_NAME_LEN` and `MPI_MAX_STRINGTAG_LEN` to list of named constants.~~
+
+~~4.  Sections [[versions/v50/sections/pt2pt#Persistent Communication Requests|Persistent Communication Requests]] , [[versions/v50/sections/dynamic#Finalizing MPI|Finalizing MPI]] , [[versions/v50/sections/dynamic#Session Creation and Destruction Methods|Session Creation and Destruction Methods]] and [[versions/v50/sections/dynamic#Releasing Connections|Releasing Connections]] on pages [[versions/v50/sections/pt2pt#Persistent Communication Requests|Persistent Communication Requests]] , [[versions/v50/sections/dynamic#Finalizing MPI|Finalizing MPI]] , [[versions/v50/sections/dynamic#Session Creation and Destruction Methods|Session Creation and Destruction Methods]] and [[versions/v50/sections/dynamic#Releasing Connections|Releasing Connections]] and MPI-4.0 Sections 3.9, 11.2.2, 11.3.1 and 11.10.4 on pages 94, 494, 501 and 546.~~
+
+~~    The requirements for calling [[versions/v50/API/MPI_FINALIZE|MPI_FINALIZE]] , [[versions/v50/API/MPI_SESSION_FINALIZE|MPI_SESSION_FINALIZE]] , and [[versions/v50/API/MPI_COMM_DISCONNECT|MPI_COMM_DISCONNECT]] and the outcome of [[versions/v50/API/MPI_COMM_DISCONNECT|MPI_COMM_DISCONNECT]] , especially for related inactive persistent request handles, were clarified.~~
+
+~~5.  Section [[versions/v50/sections/part#Partitioned Communication Examples|Partitioned Communication Examples]] on page [[versions/v50/sections/part#Partitioned Communication Examples|Partitioned Communication Examples]] , and MPI-4.0 Section 4.3.3. on page 115. Example [[partexample4]] on page [[partexample4]] , and MPI-4.0 Example 4.4 on page 115.~~
+
+~~    Fixed and simplified erroneous MPI-4.0 Example 4.4. The example could deadlock due to incorrect use of the `flag` variable in multiple MPI test procedure calls or thread concurrent access. The example was also simplified by removing unnecessary code and updated according to current best practice in OpenMP.~~
+
+~~6.  Section [[versions/v50/sections/part#Partition Communication with Threads/Tasks Using OpenMP 4.0 or later|Partition Communication with Threads/Tasks Using OpenMP 4.0 or later]] on page [[versions/v50/sections/part#Partition Communication with Threads/Tasks Using OpenMP 4.0 or later|Partition Communication with Threads/Tasks Using OpenMP 4.0 or later]] , MPI-4 Section 4.3.1 on page 112.~~
+
+~~    Example [[part-example2]] was corrected.~~
+
+~~7.  Section [[versions/v50/sections/datatypes#Commit and Free|Commit and Free]] on page [[versions/v50/sections/datatypes#Commit and Free|Commit and Free]] and MPI-4.0 Section 5.1.9 on page 150.~~
+
+~~    The relationship between [[versions/v50/API/MPI_TYPE_COMMIT|MPI_TYPE_COMMIT]] and initialization/finalization of a session (or the World Model) with [[versions/v50/API/MPI_INIT|MPI_INIT]] , [[versions/v50/API/MPI_INIT_THREAD|MPI_INIT_THREAD]] , [[versions/v50/API/MPI_FINALIZE|MPI_FINALIZE]] , [[versions/v50/API/MPI_SESSION_INIT|MPI_SESSION_INIT]] , and [[versions/v50/API/MPI_SESSION_FINALIZE|MPI_SESSION_FINALIZE]] was clarified.~~
+
+~~8.  Sections [[versions/v50/sections/context#Communicator Constructors|Communicator Constructors]] on page [[versions/v50/sections/context#Communicator Constructors|Communicator Constructors]] and [[versions/v50/sections/context#Inter-Communicator Operations|Inter-Communicator Operations]] on page [[versions/v50/sections/context#Inter-Communicator Operations|Inter-Communicator Operations]] , and MPI-4.0 Section 7.4.2 on page 343 and Section 7.6.2 on page 360.~~
+
+~~    Use of the `errhandler` argument to [[versions/v50/API/MPI_COMM_CREATE_FROM_GROUP|MPI_COMM_CREATE_FROM_GROUP]] and [[versions/v50/API/MPI_INTERCOMM_CREATE_FROM_GROUPS|MPI_INTERCOMM_CREATE_FROM_GROUPS]] is clarified. The error handler invoked when an error is encountered during invocation of these functions is also clarified.~~
+
+~~9.  Section [[versions/v50/sections/context#Communicator Constructors|Communicator Constructors]] on page [[versions/v50/sections/context#Communicator Constructors|Communicator Constructors]] , MPI-3 Section 6.4.2 on page 237, MPI-3.1 Section 6.4.2 on page 237, and MPI-4 Section 7.4.2 on page 327.~~
+
+~~    The description of [[versions/v50/API/MPI_COMM_DUP|MPI_COMM_DUP]] now clarifies that error handlers are also copied in the ouptut communicator produced when this procedure is called.~~
+
+~~10. Section [[versions/v50/sections/topol#Topology Inquiry Functions|Topology Inquiry Functions]] on page [[versions/v50/sections/topol#Topology Inquiry Functions|Topology Inquiry Functions]] and MPI-4.0 Section 8.5.5 on page 403.~~
+
+~~    The unintended change in the specification of argument `coords` in [[versions/v50/API/MPI_CART_COORDS|MPI_CART_COORDS]] in MPI-4.0 is reverted to the original meaning in MPI-1.1 to MPI-3.1. It is clarified that the outcome of [[versions/v50/API/MPI_CART_GET|MPI_CART_GET]] and [[versions/v50/API/MPI_CART_COORDS|MPI_CART_COORDS]] is unspecified for the case that `maxdims` is less than `ndims`.~~
+
+~~11. Section [[versions/v50/sections/inquiry#Error Handling|Error Handling]] on page [[versions/v50/sections/inquiry#Error Handling|Error Handling]] and MPI-4.0 Section 9.3 on page 458.~~
+
+~~    The fallback error-handler for the Sessions Model was clarified.~~
+
+~~12. Section [[versions/v50/sections/inquiry#Error Classes, Error Codes, and Error Handlers|Error Classes, Error Codes, and Error Handlers]] on page [[versions/v50/sections/inquiry#Error Classes, Error Codes, and Error Handlers|Error Classes, Error Codes, and Error Handlers]] and MPI-4.0 Section 9.5 on page 473.~~
+
+~~    It was clarified that `MPI_LASTUSEDCODE` is only available in the World Model.~~
+
+~~13. Sections [[versions/v50/sections/dynamic#Introduction|Introduction]] and [[versions/v50/sections/dynamic#The Dynamic Process Model|The Dynamic Process Model]] on pages [[versions/v50/sections/dynamic#Introduction|Introduction]] and [[versions/v50/sections/dynamic#The Dynamic Process Model|The Dynamic Process Model]] , and MPI-4.0 Sections 11.1 and 11.7 on pages 487 and 521.~~
+
+~~    It was clarified that the usage of the Dynamic Process Model requires the World Model to be initialized.~~
+
+~~14. Section [[versions/v50/sections/one-side#General Active Target Synchronization|General Active Target Synchronization]] on page [[versions/v50/sections/one-side#General Active Target Synchronization|General Active Target Synchronization]] and MPI-4 Section 12.5.2 on page 598.~~
+
+~~    The definition of [[versions/v50/API/MPI_WIN_TEST|MPI_WIN_TEST]] was clarified.~~
+
+~~15. Section [[versions/v50/sections/one-side#Flush and Sync|Flush and Sync]] on page [[versions/v50/sections/one-side#Flush and Sync|Flush and Sync]] , MPI-3 Section 11.5.4 on page 449, MPI-3.1 Section 11.5.4 on page 448, and MPI-4 Section 12.5.4 on page 605.~~
+
+~~    The description of [[versions/v50/API/MPI_WIN_SYNC|MPI_WIN_SYNC]] was clarified to include its use for ordering load/store accesses to shared memory. A statement was added to highlight that a call to [[versions/v50/API/MPI_WIN_SYNC|MPI_WIN_SYNC]] does not complete pending RMA operations and that a call to [[versions/v50/API/MPI_WIN_SYNC|MPI_WIN_SYNC]] does not guarantee any progress of MPI operations.~~
+
+~~16. Section [[versions/v50/sections/ei#Associating Information with Status|Associating Information with Status]] on page [[versions/v50/sections/ei#Associating Information with Status|Associating Information with Status]] , and MPI-4 Section 13.3 on page 640.~~
+
+~~    Large count interface of [[versions/v50/API/MPI_STATUS_SET_ELEMENTS|MPI_STATUS_SET_ELEMENTS]] had been missing and was added.~~
+
+~~17. Sections [[versions/v50/sections/tools#Control Variables|Control Variables]] and [[versions/v50/sections/tools#Performance Variables|Performance Variables]] on pages [[versions/v50/sections/tools#Control Variables|Control Variables]] and [[versions/v50/sections/tools#Performance Variables|Performance Variables]] , MPI-3 Sections 14.3.6 and 14.3.7 on pages 567 and 573, MPI-3.1 Sections 14.3.6 and 14.3.7 on pages 573 and 580, and MPI-4 Sections 15.3.6 and 15.3.7 on pages 738 and 744.~~
+
+~~    The intent of handle arguments of the language independent definition of [[versions/v50/API/MPI_T_CVAR_WRITE|MPI_T_CVAR_WRITE]] , [[versions/v50/API/MPI_T_PVAR_HANDLE_ALLOC|MPI_T_PVAR_HANDLE_ALLOC]] , [[versions/v50/API/MPI_T_PVAR_HANDLE_FREE|MPI_T_PVAR_HANDLE_FREE]] , [[versions/v50/API/MPI_T_PVAR_START|MPI_T_PVAR_START]] , [[versions/v50/API/MPI_T_PVAR_STOP|MPI_T_PVAR_STOP]] , [[versions/v50/API/MPI_T_PVAR_WRITE|MPI_T_PVAR_WRITE]] , and [[versions/v50/API/MPI_T_PVAR_RESET|MPI_T_PVAR_RESET]] were marked as INOUT in accordance with the special rule for handles described in Section [[terms-procedure-specification]] .~~
+
+==1.  Section [[versions/v50/sections/pt2pt#Return Status|Return Status]] on page [[versions/v50/sections/pt2pt#Return Status|Return Status]] , and MPI-4.1 Section 3.2.5 on page 39.==
+
+==    Mark `status` argument as `const` in [[versions/v50/API/MPI_STATUS_GET_SOURCE|MPI_STATUS_GET_SOURCE]] , [[versions/v50/API/MPI_STATUS_GET_TAG|MPI_STATUS_GET_TAG]] , and [[versions/v50/API/MPI_STATUS_GET_ERROR|MPI_STATUS_GET_ERROR]] .==
+
+==2.  Sections [[versions/v50/sections/dynamic#Starting MPI Processes|Starting MPI Processes]] and [[versions/v50/sections/dynamic#Memory Allocation Info|Memory Allocation Info]] on pages [[versions/v50/sections/dynamic#Starting MPI Processes|Starting MPI Processes]] and [[versions/v50/sections/dynamic#Memory Allocation Info|Memory Allocation Info]] , and MPI-4.1 Sections 11.2.1 and 11.4.3 on pages 484 and 508.==
+
+==    Clarified that, in the World Model, the value of the `mpi_memory_alloc_kinds` info key in `MPI_INFO_ENV` indicates the requested memory allocation kinds. The provided memory allocation kinds can be queried through the value of the `mpi_memory_alloc_kinds` info key in the info object returned by a call to [[versions/v50/API/MPI_COMM_GET_INFO|MPI_COMM_GET_INFO]] on `MPI_COMM_WORLD` or `MPI_COMM_SELF`.==
+
+==3.  Section [[versions/v50/sections/dynamic#Memory Allocation Info|Memory Allocation Info]] on page [[versions/v50/sections/dynamic#Memory Allocation Info|Memory Allocation Info]] , and MPI-4.1 Section 11.4.3 on page 508.==
+
+==    Clarified the requirements of the `mpi_memory_alloc_kinds` info key’s value when defaulted.==
+
+==4.  Section [[versions/v50/sections/one-side#Request-based RMA Communication Operations|Request-based RMA Communication Operations]] page [[versions/v50/sections/one-side#Request-based RMA Communication Operations|Request-based RMA Communication Operations]] and MPI-4.1 Section 12.3.5 on page 580.==
+
+==    The text contained contradicting statements about the use of [[versions/v50/API/MPI_REQUEST_FREE|MPI_REQUEST_FREE]] on RMA requests. A statement that suggested the use of [[versions/v50/API/MPI_REQUEST_FREE|MPI_REQUEST_FREE]] to release RMA requests after the window has been flushed was removed.==
+
+## Text by release
+
+> [!abstract]- MPI-3.0
+> ![[versions/v30/sections/changes#Fixes to Errata in Previous Versions of MPI]]
+
+> [!abstract]- MPI-3.1
+> ![[versions/v31/sections/changes#Fixes to Errata in Previous Versions of MPI]]
+
+> [!abstract]- MPI-4.0
+> ![[versions/v40/sections/changes#Fixes to Errata in Previous Versions of MPI]]
+
+> [!abstract]- MPI-4.1
+> ![[versions/v41/sections/changes#Fixes to Errata in Previous Versions of MPI]]
+
+> [!abstract]- MPI-5.0
+> ![[versions/v50/sections/changes#Fixes to Errata in Previous Versions of MPI]]

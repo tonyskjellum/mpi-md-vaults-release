@@ -1,0 +1,39 @@
+---
+title: MPI_T_SOURCE_GET_NUM
+c_name: MPI_T_source_get_num
+chapter: tools
+introduced: "MPI-4.0"
+deprecated: null
+removed: null
+continued_as: null
+present_in: ["MPI-4.0", "MPI-4.1", "MPI-5.0"]
+aliases: [MPI_T_SOURCE_GET_NUM, MPI_T_source_get_num]
+tags: [mpi/routine, mpi/tools]
+---
+
+# MPI_T_SOURCE_GET_NUM
+
+**Introduced** in MPI-4.0.
+
+Releases: [[versions/v40/API/MPI_T_SOURCE_GET_NUM|MPI-4.0]] · [[versions/v41/API/MPI_T_SOURCE_GET_NUM|MPI-4.1]] · [[versions/v50/API/MPI_T_SOURCE_GET_NUM|MPI-5.0]]
+
+_Δ interface or argument wording changed on the edge into this release; † listed in the deprecated chapter._
+
+## C
+
+**MPI-4.0–MPI-5.0**
+```c
+int MPI_T_source_get_num(int *num_sources)
+```
+
+## Arguments
+
+| argument | intent | description (by release) |
+|---|---|---|
+| `num_sources` | OUT | **MPI-4.0–MPI-5.0:** returns number of event sources (integer) |
+
+## Per-release notes
+
+- MPI-4.0: [[versions/v40/API/MPI_T_SOURCE_GET_NUM|API note]] · chapter [[versions/v40/sections/tools|tools]]
+- MPI-4.1: [[versions/v41/API/MPI_T_SOURCE_GET_NUM|API note]] · chapter [[versions/v41/sections/tools|tools]]
+- MPI-5.0: [[versions/v50/API/MPI_T_SOURCE_GET_NUM|API note]] · chapter [[versions/v50/sections/tools|tools]]

@@ -1,0 +1,34 @@
+---
+title: "Nonblocking Gather-to-all"
+chapter: coll
+present_in: ["MPI-3.0", "MPI-3.1", "MPI-4.0", "MPI-4.1"]
+tags: [mpi/section, mpi/coll]
+---
+
+# Nonblocking Gather-to-all
+
+Chapter **coll** · in [[versions/v30/sections/coll#Nonblocking Gather-to-all|MPI-3.0]], [[versions/v31/sections/coll#Nonblocking Gather-to-all|MPI-3.1]], [[versions/v40/sections/coll#Nonblocking Gather-to-all|MPI-4.0]], [[versions/v41/sections/coll#Nonblocking Gather-to-all|MPI-4.1]]
+
+## Changes along the time axis
+
+### MPI-2.2 → MPI-3.0
+
+_Section appears in MPI-3.0._
+
+### MPI-4.1 → MPI-5.0
+
+_Section absent from MPI-5.0._
+
+## Text by release
+
+> [!abstract]- MPI-3.0
+> ![[versions/v30/sections/coll#Nonblocking Gather-to-all]]
+
+> [!abstract]- MPI-3.1
+> ![[versions/v31/sections/coll#Nonblocking Gather-to-all]]
+
+> [!abstract]- MPI-4.0
+> ![[versions/v40/sections/coll#Nonblocking Gather-to-all]]
+
+> [!abstract]- MPI-4.1
+> ![[versions/v41/sections/coll#Nonblocking Gather-to-all]]
