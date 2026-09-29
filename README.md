@@ -75,3 +75,7 @@ With the `mpi2md` generator available,
 
 exits 0 only if `hypervault/` is consistent with the vaults and configuration
 it was built from.
+
+## Acknowledgment
+
+Support from the National Science Foundation (NSF) Under Grants  2450093 and 2514054 is gratefully acknowledged. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.
